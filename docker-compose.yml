@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_DB: lunaris
+      POSTGRES_USER: lunaris
+      POSTGRES_PASSWORD: change_me_before_deployment
+    ports: ["5432:5432"]
+    volumes: ["lunaris_db:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U lunaris -d lunaris"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  lunaris_db:

@@ -1,0 +1,1 @@
+__pycache__/\n*.py[cod]\n.venv/\n.env\nnode_modules/\n.pytest_cache/\ndata/raw/\ndata/processed/\n
